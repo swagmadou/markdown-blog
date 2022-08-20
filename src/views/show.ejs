@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-2"><%= article.title %></h1>
+        <div class="text-muted mb-3">
+            <%= article.createAt.toLocaleDateString() %>
+        </div>
+        <a href="/api/articles" class="btn btn-secondary">返回</a>
+        <a href="/api/articles/edit/<%= article._id %>" class="btn btn-info">编辑</a>
+        <div class="mt-4">
+            <%- article.htmlContent %>
+        </div>
+
+    </div>
+    
+</body>
+</html>

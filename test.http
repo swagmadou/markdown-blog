@@ -1,0 +1,39 @@
+# 首页
+GET  http://localhost:3000/api/articles
+
+
+###
+
+# 跳转到创建新文档页面
+GET  http://localhost:3000/api/articles/new
+
+
+###
+
+# 查看指定文档
+GET  http://localhost:3000/api/articles/11111111
+
+
+###
+
+# 插入新文档
+POST  http://localhost:3000/api/articles
+
+
+###
+
+# 删除文档
+POST  http://localhost:3000/api/articles/del/62aaa458d0145bd1c9ca7ae1
+
+
+###
+
+# 跳转到修改页面
+GET http://localhost:3000/api/articles/edit
+
+
+###
+
+
+# 修改文档
+POST http://localhost:3000/api/articles/edit

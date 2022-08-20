@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>edit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">Edit Article</h1>
+      <form action="/api/articles/edit" method="post">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            class="form-control"
+            type="text"
+            value="<%= article.title %>"
+            required
+            name="title"
+            id="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            class="form-control"
+            type="text"
+            value="<%= article.description %>"
+            required
+            name="description"
+            id="description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="markdownText">Markdown</label>
+          <textarea
+            class="form-control"
+            name="markdown"
+            id="markdownText"
+            rows="12"
+            required
+          ><%= article.markdown %></textarea>
+        </div>
+        <input type="hidden" name="id" value="<%= article._id %>">
+        <button type="submit" class="btn btn-primary btn-lg mr-4">Save</button>
+        <a href="/api/articles/<%= article._id %>" class="btn btn-secondary btn-lg">Cancel</a>
+        <button type="reset" class="btn btn-link mt-2" style="display: block">
+          Reset
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
